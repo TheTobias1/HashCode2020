@@ -1,4 +1,3 @@
-
 class Library:
 
     def __init__(self, id, books, max_b, s_days):
@@ -11,14 +10,15 @@ class Library:
     def heuristic(self, scanned):
 
         sum = 0
-        unscanned = []
+        unscanned = [][]
 
         for b in self.books:
                 if b.score not in scanned:
-                    unscanned.append(b)
+                    unscanned[0].append(b.score)
+                    unscanned[1].append(b.id)
                     sum += b.score
         
-        h = sum / ((len(unscanned) / lib.max_books) + self.signup_days)
+        h = sum / ((len(unscanned[0]) / lib.max_books) + self.signup_days)
         
         return [h, unscanned]
 
