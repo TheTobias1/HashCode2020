@@ -16,13 +16,11 @@ class Book:
 
 class Parsing:
     
-    def __init__():
+    def __init__(self, filepath):
 
         self.days = 0
         self.books = []
         self.libs = []
-
-        filepath = 'b_read_on.txt'
 
         with open(filepath) as fp:
         
