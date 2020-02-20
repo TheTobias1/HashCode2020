@@ -8,6 +8,20 @@ class Library:
         self.signup_days = s_days
         self.signed_up = False
 
+    def heuristic(self, scanned):
+
+        sum = 0
+        unscanned = []
+
+        for b in self.books:
+                if b.score not in scanned:
+                    unscanned.append(b)
+                    sum += b.score
+        
+        h = sum / ((len(unscanned) / lib.max_books) + self.signup_days)
+        
+        return [h, unscanned]
+
     '''
     def get_books_score():
         score = 0 
