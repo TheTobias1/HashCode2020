@@ -99,5 +99,7 @@ class Parsing:
                 
                 self.libs.append(lib)
                 lib_counter += 1
+
+        fp.close()
                 
 
