@@ -14,47 +14,54 @@ class Book:
 
 #####################################
 
-days = 0
-books = []
+class Parsing:
+    
+    def __init__():
 
-filepath = 'b_read_on.txt'
+        self.days = 0
+        self.books = []
+        self.libs = []
 
-with open(filepath) as fp:
-   
-    # General definition
-    line = fp.readline()
-    arr = line.split()
-    arr = [ int(x) for x in arr ]
+        filepath = 'b_read_on.txt'
 
-    days = arr[2]
-
-    # Book scores
-    line = fp.readline()
-    books = line.split()
-
-    books = [ int(x) for x in books ]
-
-    while line:
-
-        # Line 1
-        line = fp.readline()
-        values = line.split()
-        values = [ int(x) for x in values ]
-
-        if len(values) == 0:
-            break
-
-        lib = Library([], values[2], values[1])
+        with open(filepath) as fp:
         
-        # Line 2
-        line = fp.readline()
-        book_ids = line.split()
-        book_ids = [ int(x) for x in book_ids ]
+            # General definition
+            line = fp.readline()
+            arr = line.split()
+            arr = [ int(x) for x in arr ]
 
-        for book_id in book_ids:
-            lib.books.append(book_id)
+            days = arr[2]
 
-        if not line:
-            break
-        
+            # Book scores
+            line = fp.readline()
+            books = line.split()
+
+            self.books = [ int(x) for x in self.books ]
+
+            while line:
+
+                # Line 1
+                line = fp.readline()
+                values = line.split()
+                values = [ int(x) for x in values ]
+
+                if len(values) == 0:
+                    break
+
+                lib = Library([], values[2], values[1])
+                
+                # Line 2
+                line = fp.readline()
+                book_ids = line.split()
+                book_ids = [ int(x) for x in book_ids ]
+
+                for book_id in book_ids:
+                    lib.books.append(book_id)
+
+                if not line:
+                    break
+                
+                self.libs.append(lib)
+                
 
