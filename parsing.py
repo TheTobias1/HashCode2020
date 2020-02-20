@@ -55,7 +55,7 @@ class Parsing:
 
             # Saving objects
             for score in book_vals:
-                b = Book(counter, score)
+                b = Book(book_counter, score)
                 self.books.append(b)
                 book_counter += 1
 
@@ -69,7 +69,7 @@ class Parsing:
                 if len(values) == 0:
                     break
 
-                lib = Library([], lib_counter, values[2], values[1])
+                lib = Library(lib_counter, [], values[2], values[1])
                 print(lib.id)
 
                 # Line 2
